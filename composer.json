@@ -1,0 +1,19 @@
+{
+    "name": "combyna/editable-list-example-app",
+    "autoload": {
+        "psr-4": {
+            "Combyna\\AppWithPluginExample\\": "php/src"
+        }
+    },
+    "require": {
+        "combyna/combyna": "dev-rush",
+        "combyna/gui-plugin": "dev-master",
+        "combyna/example-gui-plugin": "dev-master"
+    },
+    "scripts": {
+        "server": "php -S localhost:9000 bin/server.php"
+    },
+    "config": {
+        "process-timeout": 0
+    }
+}

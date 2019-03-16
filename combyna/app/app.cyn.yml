@@ -1,0 +1,106 @@
+#
+# Combyna editable list example app
+# Copyright (c) Dan Phillimore (asmblah)
+# https://github.com/combyna/editable-list-example-app
+#
+# Released under the MIT license
+# https://github.com/combyna/editable-list-example-app/raw/master/MIT-LICENSE.txt
+#
+
+name: Editable list app
+translations:
+    en:
+        add_item_button_caption: Add item
+signals:
+    add_item:
+        payload:
+            item_text:
+                type: text
+home:
+    route: app.items
+routes:
+    items:
+        pattern: '/'
+        page_view: item_viewer
+    about:
+        pattern: '/about'
+        page_view: about
+
+page_views:
+    item_viewer:
+        attributes: ~
+        title: !expr 'Editable list demo'
+        description: A list of items that may be added to
+        widget:
+            type: gui.box
+            attributes: ~
+            children:
+                contents:
+                    type: group
+                    captures:
+                        define:
+                            item_text: text
+                    children:
+                        - type: text
+                          text: !expr 'Items: '
+                        - type: repeater
+                          items: !expr view_query('get_item_list')
+                          index_variable: this_item_index
+                          item_variable: this_item
+                          repeated:
+                              type: gui.box
+                              children:
+                                  contents:
+                                      type: text
+                                      text: !expr '(' ~ this_item_index ~ ')' ~ this_item
+                        - type: gui.horizontal_rule
+                        - type: text
+                          text: !expr 'Add another: '
+                        - type: gui.textbox
+                          attributes:
+                              value: !expr '<Enter some text>'
+                          captures:
+                              set:
+                                  item_text: !expr widget_value('text')
+                        - type: gui.button
+                          attributes:
+                              label: !expr trans('app.add_item_button_caption')
+                          tags:
+                              - item_viewer.add_item_button
+                          triggers:
+                              gui.click:
+                                  instructions:
+                                      - type: signal
+                                        signal: app.add_item
+                                        payload:
+                                            item_text: !expr capture('item_text')
+
+        store:
+            slots:
+                item_list:
+                    type: list
+                    element: text
+                    default: !expr []
+            commands: ~
+            queries:
+                get_item_list:
+                    parameters: ~
+                    expression: !expr slot('item_list')
+            signal_handlers:
+                app.add_item:
+                    guard: ~
+                    instructions:
+                        - type: set_slot
+                          slot: item_list
+                          value: !expr list.concat(lists: [slot('item_list'), [signal_payload('item_text')]])
+
+    about:
+        title: !expr 'About editable list demo'
+        description: About page
+        widget:
+            type: gui.box
+            attributes: ~
+            children:
+                contents:
+                    type: text
+                    text: !expr 'About my Combyna app...'
