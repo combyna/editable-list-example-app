@@ -6,7 +6,7 @@
         }
     },
     "require": {
-        "combyna/combyna": "dev-rush",
+        "combyna/combyna": "dev-navigation",
         "combyna/gui-plugin": "dev-master",
         "combyna/example-gui-plugin": "dev-master"
     },

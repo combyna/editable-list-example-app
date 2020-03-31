@@ -1,4 +1,3 @@
-
 /**
  * Combyna editable list example app
  * Copyright (c) Dan Phillimore (asmblah)

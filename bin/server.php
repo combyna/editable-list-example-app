@@ -59,7 +59,7 @@ $appState = $app->createInitialState();
 
 $appState = $app->navigateTo($appState, 'app', $routeName);
 
-$renderedHtml = $htmlRenderer->renderApp($appState);
+$renderedHtml = $htmlRenderer->renderApp($appState, $app);
 
 $fullConfigJson = json_encode([
     'environment' => $environmentConfig,

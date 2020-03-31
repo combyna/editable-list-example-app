@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "733029e05ae5989b94a2ba1639b030e6",
+    "content-hash": "8bc991748898f793eef166422c115831",
     "packages": [
         {
             "name": "combyna/combyna",
-            "version": "dev-rush",
+            "version": "dev-navigation",
             "source": {
                 "type": "git",
                 "url": "https://github.com/combyna/combyna.git",
-                "reference": "f70de71357da044163d1df9ca8c72d9846bf1a15"
+                "reference": "002a153028a3510600bb13b762dad749693e1239"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/combyna/combyna/zipball/f70de71357da044163d1df9ca8c72d9846bf1a15",
-                "reference": "f70de71357da044163d1df9ca8c72d9846bf1a15",
+                "url": "https://api.github.com/repos/combyna/combyna/zipball/002a153028a3510600bb13b762dad749693e1239",
+                "reference": "002a153028a3510600bb13b762dad749693e1239",
                 "shasum": ""
             },
             "require": {
@@ -55,7 +55,7 @@
                 }
             ],
             "description": "Combyna - build things.",
-            "time": "2019-03-16T10:30:44+00:00"
+            "time": "2020-03-31T21:14:58+00:00"
         },
         {
             "name": "combyna/example-gui-plugin",
@@ -63,12 +63,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/combyna/example-gui-plugin.git",
-                "reference": "7668958650bde89c505f0ab03aa0c6fd5ecc1db4"
+                "reference": "17f3f73344619fac271ec25e2a572a2542c02d51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/combyna/example-gui-plugin/zipball/7668958650bde89c505f0ab03aa0c6fd5ecc1db4",
-                "reference": "7668958650bde89c505f0ab03aa0c6fd5ecc1db4",
+                "url": "https://api.github.com/repos/combyna/example-gui-plugin/zipball/17f3f73344619fac271ec25e2a572a2542c02d51",
+                "reference": "17f3f73344619fac271ec25e2a572a2542c02d51",
                 "shasum": ""
             },
             "require-dev": {
@@ -82,7 +82,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "An example Combyna plugin for extending the basic set of GUI components",
-            "time": "2019-03-13T22:03:01+00:00"
+            "time": "2020-03-31T21:19:56+00:00"
         },
         {
             "name": "combyna/gui-plugin",
@@ -90,12 +90,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/combyna/gui-plugin.git",
-                "reference": "eff7cd2c39eac7231c6739773aaf1146590df4d6"
+                "reference": "4e071b722533b4eb83838b192435d146c56f792b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/combyna/gui-plugin/zipball/eff7cd2c39eac7231c6739773aaf1146590df4d6",
-                "reference": "eff7cd2c39eac7231c6739773aaf1146590df4d6",
+                "url": "https://api.github.com/repos/combyna/gui-plugin/zipball/4e071b722533b4eb83838b192435d146c56f792b",
+                "reference": "4e071b722533b4eb83838b192435d146c56f792b",
                 "shasum": ""
             },
             "require-dev": {
@@ -111,7 +111,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "A plugin for Combyna that provides basic GUI components",
-            "time": "2019-03-13T21:57:19+00:00"
+            "time": "2020-03-31T21:49:08+00:00"
         },
         {
             "name": "combyna/php-peg",
@@ -219,7 +219,7 @@
         },
         {
             "name": "symfony/config",
-            "version": "v2.8.49",
+            "version": "v2.8.52",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
@@ -276,16 +276,16 @@
         },
         {
             "name": "symfony/dependency-injection",
-            "version": "v2.8.49",
+            "version": "v2.8.52",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "a2f40df187f0053bc361bcea3b27ff2b85744d9f"
+                "reference": "c306198fee8f872a8f5f031e6e4f6f83086992d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/a2f40df187f0053bc361bcea3b27ff2b85744d9f",
-                "reference": "a2f40df187f0053bc361bcea3b27ff2b85744d9f",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/c306198fee8f872a8f5f031e6e4f6f83086992d8",
+                "reference": "c306198fee8f872a8f5f031e6e4f6f83086992d8",
                 "shasum": ""
             },
             "require": {
@@ -335,11 +335,11 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
-            "time": "2018-11-11T11:18:13+00:00"
+            "time": "2019-04-16T11:33:46+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.8.49",
+            "version": "v2.8.52",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
@@ -448,16 +448,16 @@
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v2.8.49",
+            "version": "v2.8.52",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "d0ab719bedc9fc6748a95b2dcb04137292a27b92"
+                "reference": "3929d9fe8148d17819ad0178c748b8d339420709"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/d0ab719bedc9fc6748a95b2dcb04137292a27b92",
-                "reference": "d0ab719bedc9fc6748a95b2dcb04137292a27b92",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/3929d9fe8148d17819ad0178c748b8d339420709",
+                "reference": "3929d9fe8148d17819ad0178c748b8d339420709",
                 "shasum": ""
             },
             "require": {
@@ -499,20 +499,20 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2018-11-25T11:27:05+00:00"
+            "time": "2019-11-12T12:34:41+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.10.0",
+            "version": "v1.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "e3d826245268269cd66f8326bd8bc066687b4a19"
+                "reference": "4719fa9c18b0464d399f1a63bf624b42b6fa8d14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/e3d826245268269cd66f8326bd8bc066687b4a19",
-                "reference": "e3d826245268269cd66f8326bd8bc066687b4a19",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/4719fa9c18b0464d399f1a63bf624b42b6fa8d14",
+                "reference": "4719fa9c18b0464d399f1a63bf624b42b6fa8d14",
                 "shasum": ""
             },
             "require": {
@@ -524,7 +524,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.9-dev"
+                    "dev-master": "1.15-dev"
                 }
             },
             "autoload": {
@@ -541,12 +541,12 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
+                    "name": "Gert de Pagter",
+                    "email": "BackEndTea@gmail.com"
                 },
                 {
-                    "name": "Gert de Pagter",
-                    "email": "backendtea@gmail.com"
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
@@ -557,20 +557,20 @@
                 "polyfill",
                 "portable"
             ],
-            "time": "2018-08-06T14:22:27+00:00"
+            "time": "2020-02-27T09:26:54+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.10.0",
+            "version": "v1.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "c79c051f5b3a46be09205c73b80b346e4153e494"
+                "reference": "81ffd3a9c6d707be22e3012b827de1c9775fc5ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/c79c051f5b3a46be09205c73b80b346e4153e494",
-                "reference": "c79c051f5b3a46be09205c73b80b346e4153e494",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/81ffd3a9c6d707be22e3012b827de1c9775fc5ac",
+                "reference": "81ffd3a9c6d707be22e3012b827de1c9775fc5ac",
                 "shasum": ""
             },
             "require": {
@@ -582,7 +582,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.9-dev"
+                    "dev-master": "1.15-dev"
                 }
             },
             "autoload": {
@@ -616,20 +616,20 @@
                 "portable",
                 "shim"
             ],
-            "time": "2018-09-21T13:07:52+00:00"
+            "time": "2020-03-09T19:04:49+00:00"
         },
         {
             "name": "symfony/polyfill-php54",
-            "version": "v1.10.0",
+            "version": "v1.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php54.git",
-                "reference": "412977e090c6a8472dc39d50d1beb7d59495a965"
+                "reference": "ddc8c8497180a1ecf3e77d4df42a276a38048683"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php54/zipball/412977e090c6a8472dc39d50d1beb7d59495a965",
-                "reference": "412977e090c6a8472dc39d50d1beb7d59495a965",
+                "url": "https://api.github.com/repos/symfony/polyfill-php54/zipball/ddc8c8497180a1ecf3e77d4df42a276a38048683",
+                "reference": "ddc8c8497180a1ecf3e77d4df42a276a38048683",
                 "shasum": ""
             },
             "require": {
@@ -638,7 +638,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.9-dev"
+                    "dev-master": "1.15-dev"
                 }
             },
             "autoload": {
@@ -674,20 +674,20 @@
                 "portable",
                 "shim"
             ],
-            "time": "2018-08-06T14:22:27+00:00"
+            "time": "2020-02-27T09:26:54+00:00"
         },
         {
             "name": "symfony/polyfill-php55",
-            "version": "v1.10.0",
+            "version": "v1.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php55.git",
-                "reference": "42a4c00a347625ac8853c3358c47eeadc7fd4e96"
+                "reference": "bb47cf11bd615810c631c12caeadf70ea91d2d80"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php55/zipball/42a4c00a347625ac8853c3358c47eeadc7fd4e96",
-                "reference": "42a4c00a347625ac8853c3358c47eeadc7fd4e96",
+                "url": "https://api.github.com/repos/symfony/polyfill-php55/zipball/bb47cf11bd615810c631c12caeadf70ea91d2d80",
+                "reference": "bb47cf11bd615810c631c12caeadf70ea91d2d80",
                 "shasum": ""
             },
             "require": {
@@ -697,7 +697,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.9-dev"
+                    "dev-master": "1.15-dev"
                 }
             },
             "autoload": {
@@ -730,11 +730,11 @@
                 "portable",
                 "shim"
             ],
-            "time": "2018-10-31T12:13:01+00:00"
+            "time": "2020-02-27T09:26:54+00:00"
         },
         {
             "name": "symfony/routing",
-            "version": "v2.8.49",
+            "version": "v2.8.52",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/routing.git",
@@ -808,7 +808,7 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v2.8.49",
+            "version": "v2.8.52",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
@@ -872,7 +872,7 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.8.49",
+            "version": "v2.8.52",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
