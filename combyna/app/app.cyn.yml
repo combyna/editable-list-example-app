@@ -26,6 +26,42 @@ routes:
         pattern: '/about'
         page_view: about
 
+widgets:
+    main_navigation:
+        type: compound
+        attributes: ~
+        children: ~
+        root:
+            type: group
+            children:
+                - type: gui.list
+                  children:
+                      items:
+                          type: group
+                          children:
+                              - type: gui.list_item
+                                children:
+                                    contents:
+                                        type: gui.route_link
+                                        attributes:
+                                            route: !expr 'app.items'
+                                        children:
+                                            contents:
+                                                type: text
+                                                text: !expr 'Item list'
+                              - type: gui.list_item
+                                children:
+                                    contents:
+                                        type: gui.route_link
+                                        attributes:
+                                            route: !expr 'app.about'
+                                        children:
+                                            contents:
+                                                type: text
+                                                text: !expr 'About'
+
+                - type: gui.horizontal_rule
+
 page_views:
     item_viewer:
         attributes: ~
@@ -41,6 +77,8 @@ page_views:
                         define:
                             item_text: text
                     children:
+                        - type: app.main_navigation
+
                         - type: text
                           text: !expr 'Items: '
                         - type: repeater
@@ -102,5 +140,9 @@ page_views:
             attributes: ~
             children:
                 contents:
-                    type: text
-                    text: !expr 'About my Combyna app...'
+                    type: group
+                    children:
+                        - type: app.main_navigation
+
+                        - type: text
+                          text: !expr 'About my Combyna app...'
