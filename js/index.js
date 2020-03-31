@@ -1,6 +1,6 @@
 /**
  * Combyna editable list example app
- * Copyright (c) Dan Phillimore (asmblah)
+ * Copyright (c) the Combyna project and contributors
  * https://github.com/combyna/editable-list-example-app
  *
  * Released under the MIT license
