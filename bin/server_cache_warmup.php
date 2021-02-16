@@ -17,6 +17,11 @@ use Combyna\Component\Framework\Originators;
 require_once __DIR__ . '/../vendor/autoload.php';
 
 // Warm the server cache
-$clientBootstrap = new Bootstrap(new BootstrapConfig(), Originators::SERVER, __DIR__ . '/../dist/php');
+$clientBootstrap = new Bootstrap(
+    new BootstrapConfig(),
+    Originators::SERVER,
+    __DIR__ . '/..',
+    'dist/php'
+);
 $clientBootstrap->getContainer();
 $clientBootstrap->warmUp();

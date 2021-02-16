@@ -19,31 +19,7 @@ import {
 } from 'combyna-gui-plugin/react';
 import exampleReactGuiPlugin from 'combyna-example-gui-plugin';
 
-// FIXME: Require the plugin once that has been published in PHPRuntime
-require('phpruntime/sync').install({
-    functionGroups: [
-        require('phpruntime/src/builtin/functions/pcre/basicSupport')
-    ]
-});
-
-const clientModule = require('../php/src/client.php')();
-
-// Hook stdout and stderr up to the DOM
-// FIXME: Move this to phpify
-clientModule.getStdout().on('data', function (data) {
-    if (!console) {
-        return;
-    }
-
-    console.info(data);
-});
-clientModule.getStderr().on('data', function (data) {
-    if (!console) {
-        return;
-    }
-
-    console.warn(data);
-});
+const clientModule = require('../php/src/client.php');
 
 const scriptElement = document.getElementById('appConfig');
 
@@ -54,37 +30,40 @@ if (!scriptElement) {
 const fullConfigJson = scriptElement.text;
 const fullConfig = JSON.parse(fullConfigJson);
 const enableDebug = false;
-const clientFactory = clientModule.execute().getNative()(enableDebug);
 
-clientFactory.onBroadcastSignal((signalDispatchedEvent) => {
-    const signal = signalDispatchedEvent.getSignal();
-    const signalLibraryName = signal.getLibraryName();
-    const signalName = signal.getName();
-    const signalPayload = signal.getPayloadStaticBag().toNativeArray();
+(async () => {
+    const clientFactory = await (await clientModule).getNative()(enableDebug);
 
-    console.log(`Broadcasting signal ${signalLibraryName}.${signalName}: ${JSON.stringify(signalPayload)}`);
-});
+    await clientFactory.onBroadcastSignal(async (signalDispatchedEvent) => {
+        const signal = await signalDispatchedEvent.getSignal();
+        const signalLibraryName = await signal.getLibraryName();
+        const signalName = await signal.getName();
+        const signalPayload = await (await signal.getPayloadStaticBag()).toNativeArray();
 
-clientFactory.useProductionMode();
-valueProviderRepository.installProviders(clientFactory);
+        console.log(`Broadcasting signal ${signalLibraryName}.${signalName}: ${JSON.stringify(signalPayload)}`);
+    });
 
-const client = clientFactory.createClient(
-    fullConfig.environment,
-    fullConfig.app
-);
-let appState = client.createInitialState();
+    await clientFactory.useProductionMode();
+    valueProviderRepository.installProviders(clientFactory);
 
-// Navigate the client-side router to the correct route
-appState = client.navigateTo(appState, 'app', fullConfig.route);
+    const client = await clientFactory.createClient(
+        fullConfig.environment,
+        fullConfig.app
+    );
+    let appState = await client.createInitialState();
 
-exampleReactGuiPlugin(reactElementFactoryRepository, builtinTriggerMappingRepository);
+    // Navigate the client-side router to the correct route
+    appState = await client.navigateTo(appState, 'app', fullConfig.route);
 
-ReactDOM.render(
-    <PageViewComponent
-        appState={appState}
-        client={client}
-        reactElementFactoryRepository={reactElementFactoryRepository}
-        valueProviderRepository={valueProviderRepository}
-    />,
-    document.getElementById('appRoot')
-);
+    exampleReactGuiPlugin(reactElementFactoryRepository, builtinTriggerMappingRepository);
+
+    ReactDOM.render(
+        <PageViewComponent
+            appState={appState}
+            client={client}
+            reactElementFactoryRepository={reactElementFactoryRepository}
+            valueProviderRepository={valueProviderRepository}
+        />,
+        document.getElementById('appRoot')
+    );
+})();

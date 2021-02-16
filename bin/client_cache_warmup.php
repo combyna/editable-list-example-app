@@ -17,7 +17,12 @@ use Combyna\Component\Framework\Originators;
 require_once __DIR__ . '/../vendor/autoload.php';
 
 // Warm the client cache
-$clientBootstrap = new Bootstrap(new BootstrapConfig(), Originators::CLIENT, __DIR__ . '/../dist/php');
+$clientBootstrap = new Bootstrap(
+    new BootstrapConfig(),
+    Originators::CLIENT,
+    __DIR__ . '/..',
+    'dist/php'
+);
 // Create the standalone Combyna container for Uniter to compile down
 // TODO: Remove the need for this ->getContainer() call
 $clientBootstrap->getContainer();

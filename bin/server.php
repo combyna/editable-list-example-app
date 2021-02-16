@@ -29,7 +29,12 @@ if (preg_match('/\.(?:js|map)$/', $_SERVER['REQUEST_URI'])) {
 // Load Composer's autoloader
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$serverBootstrap = new Bootstrap(new BootstrapConfig(), Originators::SERVER, __DIR__ . '/../dist/php');
+$serverBootstrap = new Bootstrap(
+    new BootstrapConfig(),
+    Originators::SERVER,
+    __DIR__ . '/..',
+    'dist/php'
+);
 
 $routeCollection = new RouteCollection();
 $routeCollection->add('items', new Route('/'));

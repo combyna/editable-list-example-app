@@ -3,64 +3,28 @@
   "version": "1.0.0",
   "description": "An example standalone app built using Combyna",
   "scripts": {
-    "dev": "npm run cache:warmup && webpack --devtool source-map --progress",
-    "dev:watch": "npm run cache:warmup && webpack --devtool source-map --progress --watch",
+    "prod": "npm run cache:warmup && webpack --devtool=source-map --mode=production --progress",
+    "dev": "npm run cache:warmup && webpack --devtool=source-map --mode=development --progress",
+    "dev:watch": "npm run cache:warmup && webpack --devtool=source-map --mode=development --progress --profile --watch",
     "cache:warmup": "rm -rf dist/php && php bin/server_cache_warmup.php && php bin/client_cache_warmup.php"
   },
   "keywords": [],
   "license": "MIT",
   "dependencies": {
+    "@babel/runtime": "^7.9.2",
     "combyna-example-gui-plugin": "git://github.com/combyna/example-gui-plugin.git#master",
     "combyna-gui-plugin": "git://github.com/combyna/gui-plugin.git#master",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.4",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "happypack": "^4.0.1",
-    "phpify": "^4.2.0",
-    "source-map-loader": "^0.2.3",
-    "transform-loader": "^0.2.4",
-    "webpack": "^3.12.0",
-    "webpack-dev-server": "^3.10.3"
-  },
-  "phpify": {
-    "phpToJS": {
-      "include": [
-        "dist/php/client/**/*.php",
-        "dist/php/common/**/*.php",
-        "php/src/**/*.php",
-        "vendor/autoload.php",
-        "vendor/combyna/combyna/php/dist/**/*.php",
-        "vendor/combyna/combyna/php/src/**/*.php",
-        "vendor/combyna/example-gui-plugin/php/src/**/*.php",
-        "vendor/combyna/gui-plugin/php/src/**/*.php",
-        "vendor/composer/**/*.php",
-        "!vendor/composer/ca-bundle/",
-        "!vendor/composer/semver/**",
-        "vendor/symfony/config/**/*.php",
-        "!vendor/symfony/config/Tests/**",
-        "vendor/symfony/dependency-injection/**/*.php",
-        "!vendor/symfony/dependency-injection/Compiler/**",
-        "!vendor/symfony/dependency-injection/Tests/**",
-        "!vendor/symfony/dependency-injection/ContainerAwareTrait.php",
-        "!vendor/symfony/dependency-injection/Dumper/PhpDumper.php",
-        "!vendor/symfony/dependency-injection/Loader/XmlFileLoader.php",
-        "vendor/symfony/event-dispatcher/**/*.php",
-        "!vendor/symfony/event-dispatcher/Tests/**",
-        "vendor/symfony/routing/**/*.php",
-        "!vendor/symfony/routing/Tests/**",
-        "!vendor/symfony/routing/RouterInterface.php",
-        "vendor/symfony/translation/**/*.php",
-        "!vendor/symfony/translation/Tests/**",
-        "!vendor/symfony/translation/Util/ArrayConverter.php"
-      ],
-      "lineNumbers": true,
-      "sync": true
-    }
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "uniter-loader": "^1.0.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
   }
 }

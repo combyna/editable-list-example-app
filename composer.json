@@ -6,12 +6,12 @@
         }
     },
     "require": {
-        "combyna/combyna": "dev-navigation",
-        "combyna/gui-plugin": "dev-master",
+        "combyna/combyna": "dev-master",
+        "combyna/gui-plugin": "dev-symfony3",
         "combyna/example-gui-plugin": "dev-master"
     },
     "scripts": {
-        "server": "php -S localhost:9000 bin/server.php"
+        "server": "php -S localhost:8000 bin/server.php"
     },
     "config": {
         "process-timeout": 0

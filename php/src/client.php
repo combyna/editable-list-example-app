@@ -16,11 +16,8 @@ function interface_exists($interfaceName) {
 function is_dir($path) {
     return true; // Used by CombynaBootstrap to check the cache folder exists
 }
-function is_int($value) {
-    return true;
-}
-function is_string($value) {
-    return true;
+function is_readable($path) {
+    return true; // Used by ExpressionParser to check the compiled parser is usable
 }
 function is_writable($path) {
     return true; // Used by CombynaBootstrap to check the cache folder is writable
@@ -36,6 +33,8 @@ function rtrim($string, $charlist) {
     return $string;
 }
 
+class RuntimeException extends Exception {}
+
 use Combyna\AppWithPluginExample\Combyna\BootstrapConfig;
 use Combyna\Component\Framework\Bootstrap\Bootstrap;
 use Combyna\Component\Framework\Originators;
@@ -47,7 +46,8 @@ return function ($debug = false) {
     $clientBootstrap = new Bootstrap(
         new BootstrapConfig(),
         Originators::CLIENT,
-        __DIR__ . '/../../dist/php',
+        __DIR__ . '/../..',
+        'dist/php',
         $debug
     );
 

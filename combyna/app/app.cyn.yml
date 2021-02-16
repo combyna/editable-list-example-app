@@ -44,28 +44,28 @@ widgets:
                                     contents:
                                         type: gui.route_link
                                         attributes:
-                                            route: !expr 'app.items'
+                                            route: "='app.items'"
                                         children:
                                             contents:
                                                 type: text
-                                                text: !expr 'Item list'
+                                                text: "='Item list'"
                               - type: gui.list_item
                                 children:
                                     contents:
                                         type: gui.route_link
                                         attributes:
-                                            route: !expr 'app.about'
+                                            route: "='app.about'"
                                         children:
                                             contents:
                                                 type: text
-                                                text: !expr 'About'
+                                                text: "='About'"
 
                 - type: gui.horizontal_rule
 
 page_views:
     item_viewer:
         attributes: ~
-        title: !expr 'Editable list demo'
+        title: "='Editable list demo'"
         description: A list of items that may be added to
         widget:
             type: gui.box
@@ -80,9 +80,9 @@ page_views:
                         - type: app.main_navigation
 
                         - type: text
-                          text: !expr 'Items: '
+                          text: "='Items: '"
                         - type: repeater
-                          items: !expr view_query('get_item_list')
+                          items: "=view_query('get_item_list')"
                           index_variable: this_item_index
                           item_variable: this_item
                           repeated:
@@ -90,19 +90,19 @@ page_views:
                               children:
                                   contents:
                                       type: text
-                                      text: !expr '(' ~ this_item_index ~ ')' ~ this_item
+                                      text: "='(' ~ this_item_index ~ ')' ~ this_item"
                         - type: gui.horizontal_rule
                         - type: text
-                          text: !expr 'Add another: '
+                          text: "='Add another: '"
                         - type: gui.textbox
                           attributes:
-                              value: !expr '<Enter some text>'
+                              value: "='<Enter some text>'"
                           captures:
                               set:
-                                  item_text: !expr widget_value('text')
+                                  item_text: "=widget_value('text')"
                         - type: gui.button
                           attributes:
-                              label: !expr trans('app.add_item_button_caption')
+                              label: "=trans('app.add_item_button_caption')"
                           tags:
                               - item_viewer.add_item_button
                           triggers:
@@ -111,29 +111,29 @@ page_views:
                                       - type: signal
                                         signal: app.add_item
                                         payload:
-                                            item_text: !expr capture('item_text')
+                                            item_text: "=capture('item_text')"
 
         store:
             slots:
                 item_list:
                     type: list
                     element: text
-                    default: !expr []
+                    default: "=[]"
             commands: ~
             queries:
                 get_item_list:
                     parameters: ~
-                    expression: !expr slot('item_list')
+                    expression: "=slot('item_list')"
             signal_handlers:
                 app.add_item:
                     guard: ~
                     instructions:
                         - type: set_slot
                           slot: item_list
-                          value: !expr list.concat(lists: [slot('item_list'), [signal_payload('item_text')]])
+                          value: "=list.concat(lists: [slot('item_list'), [signal_payload('item_text')]])"
 
     about:
-        title: !expr 'About editable list demo'
+        title: "='About editable list demo'"
         description: About page
         widget:
             type: gui.box
@@ -145,4 +145,4 @@ page_views:
                         - type: app.main_navigation
 
                         - type: text
-                          text: !expr 'About my Combyna app...'
+                          text: "='About my Combyna app...'"
